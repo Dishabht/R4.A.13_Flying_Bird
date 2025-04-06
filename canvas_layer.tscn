@@ -1,8 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://kd73h1ltvmiy"]
+[gd_scene load_steps=8 format=3 uid="uid://kd73h1ltvmiy"]
 
-[ext_resource type="StyleBox" path="res://new_style_box_texture.tres" id="1_4g2xc"]
+[ext_resource type="StyleBox" uid="uid://c3l82xhqiq2ix" path="res://new_style_box_texture.tres" id="1_4g2xc"]
 [ext_resource type="Script" path="res://game_over.gd" id="1_uaebl"]
 [ext_resource type="Texture2D" uid="uid://d2ojvy5cfbpvh" path="res://restart.png" id="1_wn46w"]
+[ext_resource type="Texture2D" uid="uid://vgpswn6ttu4v" path="res://Titre.png" id="4_uiseu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5o7pn"]
+bg_color = Color(0.6, 0.6, 0.6, 0.501961)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_im78u"]
 texture = ExtResource("1_wn46w")
@@ -13,14 +21,44 @@ texture = ExtResource("1_wn46w")
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_uaebl")
 
-[node name="RestartButton" type="Button" parent="."]
-offset_left = 342.0
-offset_top = 350.0
-offset_right = 502.0
-offset_bottom = 413.0
+[node name="StartPanel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 111.0
+offset_right = -46.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5o7pn")
+
+[node name="TitreImage" type="TextureRect" parent="StartPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -291.0
+offset_top = -41.0
+offset_right = 262.0
+offset_bottom = 279.0
+grow_horizontal = 2
+texture = ExtResource("4_uiseu")
+
+[node name="RestartButton" type="Button" parent="StartPanel"]
+offset_left = 290.0
+offset_top = 239.0
+offset_right = 450.0
+offset_bottom = 302.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_im78u")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qxrl5")
 theme_override_styles/normal = ExtResource("1_4g2xc")
 toggle_mode = true
 
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[node name="Label" type="Label" parent="StartPanel"]
+offset_left = -52.0
+offset_top = -111.0
+offset_right = -12.0
+offset_bottom = -88.0
+
+[connection signal="pressed" from="StartPanel/RestartButton" to="." method="_on_restart_button_pressed"]

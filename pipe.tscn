@@ -7,7 +7,7 @@
 size = Vector2(78, 35.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0ni3"]
-size = Vector2(72, 524)
+size = Vector2(72, 1280)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hcqb"]
 size = Vector2(78, 36)
@@ -22,6 +22,8 @@ size = Vector2(20, 199)
 script = ExtResource("1_fc1sc")
 
 [node name="Lower" type="Sprite2D" parent="."]
+position = Vector2(0, -133.214)
+scale = Vector2(1, 2.33214)
 texture = ExtResource("1_e1ehv")
 offset = Vector2(0, 380)
 
@@ -30,7 +32,7 @@ position = Vector2(0, 118.25)
 shape = SubResource("RectangleShape2D_wt411")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 398)
+position = Vector2(0, 776)
 shape = SubResource("RectangleShape2D_r0ni3")
 
 [node name="Upper" type="Sprite2D" parent="."]
