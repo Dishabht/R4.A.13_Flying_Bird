@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://r0rucev35dir"]
+[gd_scene load_steps=11 format=3 uid="uid://r0rucev35dir"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0472s"]
 [ext_resource type="PackedScene" uid="uid://fgsnk8siikeb" path="res://bird.tscn" id="2_3jeq4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kd73h1ltvmiy" path="res://canvas_layer.tscn" id="6_rnghj"]
 [ext_resource type="Texture2D" uid="uid://vgpswn6ttu4v" path="res://Titre.png" id="6_v2yjd"]
 [ext_resource type="FontFile" uid="uid://cdry5pfanqiqx" path="res://Pixeland.ttf" id="7_mjqxi"]
+[ext_resource type="AudioStream" uid="uid://dra6omj5bfckq" path="res://puzzle-game-bright-casual-video-game-music-249202.mp3" id="8_qnr6j"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3brmh"]
 load_path = "res://.godot/imported/bg.png-24bff804693ee063127ad100e04c5185.ctex"
@@ -91,6 +92,11 @@ offset_right = 262.0
 offset_bottom = 279.0
 grow_horizontal = 2
 texture = ExtResource("6_v2yjd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_qnr6j")
+volume_db = -20.685
+autoplay = true
 
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]

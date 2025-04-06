@@ -103,6 +103,9 @@ func stop_game():
 	$Bird.flying = false
 	game_running = false
 	game_over = true
+	$ScoreLabel2.text = "SCORE: " + str(score)
+
+
 
 func bird_hit():
 	$Bird.falling = true
